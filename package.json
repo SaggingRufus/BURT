@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/SaggingRufus/BURT/issues"
   },
-  "homepage": "https://github.com/SaggingRufus/BURT#readme"
+  "homepage": "https://github.com/SaggingRufus/BURT#readme",
+  "devDependencies": {
+    "electron": "^21.0.1"
+  },
+    "scripts": {
+    "start": "electron ."
+  }
 }
