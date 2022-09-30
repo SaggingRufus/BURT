@@ -1,0 +1,19 @@
+{
+  "name": "burt",
+  "version": "0.0.1",
+  "description": "A universal item tracker for randomizers",
+  "main": "index.js",
+  "scripts": {
+    "test": "test-burt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaggingRufus/BURT.git"
+  },
+  "author": "SaggingRufus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SaggingRufus/BURT/issues"
+  },
+  "homepage": "https://github.com/SaggingRufus/BURT#readme"
+}

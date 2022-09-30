@@ -1,0 +1,61 @@
+{
+	"$id": "https://example.com/geographical-location.schema.json",
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Content Schema",
+	"description": "Describes the content for a cell in BURT"
+	"required": [ "contentType", "image" ],
+	"type": "object",
+	"properties": {
+		"contentType": {
+			"type": "string",
+			"description": "type of content. Valid values are 'map' and 'item'"
+		},
+		"border": {
+			"type": "string",
+			"description": "a path to the image used as border for the content if applicable"
+			"default": ""
+		},
+		"background": {
+			"type": "string",
+			"description": "path to the background image"
+		},
+		"image":{
+			"type": "array",
+			"items":{"$ref": "#/$defs/imageDetail"}
+		},
+	},
+	"$defs": {
+		"imageDetail": {
+			"type": "object"
+			"required": [ "path", "position" ]
+			"properties": {
+				"path": {
+					"type": "string",
+					"description": "path to the image"
+				}
+				"size":{
+					"type": "number"
+					"minimum": 0.01,
+					"default": 1,
+					"description": "determines image scale 1 is 100%, 0.5 is 50%, 2 is 200%. All images are 1 by default which will scale all of the images to the same size"
+				}
+				"position":{
+					"type": "number",
+					"minimum": 1,
+					"description": "position in the grid the image should appear. You can overlay items by placing them in the same position"
+				},
+				"activeByDefault": {
+					"type": "boolean",
+					"description": "the image in rank 1 will be set to on",
+					"default": "false"
+				}
+				"imageRank":{
+					"type": "number",
+					"description": "if there are multiple images in the same position, you can specify their order here",
+					"default": 1,
+					"minimum": 1
+				}
+			}
+		}
+	}
+}
