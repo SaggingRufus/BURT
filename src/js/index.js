@@ -8,7 +8,7 @@ const createWindow = () => {
   const win = new BrowserWindow({
     width: mainWindowProperties.width,
     height: mainWindowProperties.height,
-    icon: "./burt_icon.png"
+    icon: "./resources/burt_icon.png"
   })
   win.loadFile('src/html/index.html')
 }
