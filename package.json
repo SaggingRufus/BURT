@@ -2,7 +2,7 @@
   "name": "burt",
   "version": "0.0.1",
   "description": "A universal item tracker for randomizers",
-  "main": "index.js",
+  "main": "src/js/index.js",
   "scripts": {
     "test": "test-burt"
   },
