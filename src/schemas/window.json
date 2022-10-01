@@ -9,55 +9,31 @@
     "height": {
       "type": "number",
       "minimum": 1,
-      "maximum": 1080
+      "maximum": 1080,
 	  "default": 800
     },
     "width": {
       "type": "number",
       "minimum": 1,
-      "maximum": 1920
+      "maximum": 1920,
 	  "default": 600
     },
 	"row": {
 		"type": "array",
-		"items": { "$ref": "#/$defs/rowDetails"}
-	},
-  },
-  "$defs": {
-	"rowDetails": {
-		"type": "object",
-		"required": ["columnDetails"],
-		"properties": {
-			"columnDetails": {
-				"type": "array",
-				"items": { "$ref": "#/$defs/columnDetails"}
-			}
-		}
-	},
-	"columnDetails": {
-		"type": "object",
-		"required" : ["columnContent"],
-		"properties": {
-			"columnSpan": {
-				"type": "number",
-				"description": "percent of the row the column occupys",
-				"minimum": 1,
-				"maximum": 100
-				"default": 100
-			},
-			"columnContent":{
-				"type": "array",
-				"items": { "$ref": "#/$defs/content"}
-			}
-		}
-	},
-	"content": {
-		"type": "object",
-		"required": ["path"],
-		"properties": {
-			"path": {
-				"type": "string",
-				"description": "relative path to the json that will populate this area"
+		"items": { 
+			"type": "object",
+			"properties": {
+				"span": {
+					"type": "number",
+					"description": "percent of the row the column occupies",
+					"minimum": 1,
+					"maximum": 100,
+					"default": 100
+				},
+				"content":{
+					"type": "array",
+					"items": { "type": "string"}
+				}
 			}
 		}
 	}
